@@ -13,6 +13,10 @@ export const ACTION_TYPE = {
   UPDATE_IS_BREAK: 'UPDATE_IS_BREAK',
   UPDATE_TITLE: 'UPDATE_TITLE',
   UPDATE_REGION: 'UPDATE_REGION',
+  UPDATE_DEF_WORK_MIN: 'UPDATE_DEF_WORK_MIN',
+  UPDATE_DEF_WORK_SEC: 'UPDATE_DEF_WORK_SEC',
+  UPDATE_DEF_BREAK_MIN: 'UPDATE_DEF_BREAK_MIN',
+  UPDATE_DEF_BREAK_SEC: 'UPDATE_DEF_BREAK_SEC',
 };
 
 export const updateUser = update => ({
@@ -67,6 +71,26 @@ export const updateTitle = update => ({
 
 export const updateRegion = update => ({
   type: ACTION_TYPE.UPDATE_REGION,
+  payload: update,
+})
+
+export const updateDefWorkMin = update => ({
+  type: ACTION_TYPE.UPDATE_DEF_WORK_MIN,
+  payload: update,
+})
+
+export const updateDefWorkSec = update => ({
+  type: ACTION_TYPE.UPDATE_DEF_WORK_SEC,
+  payload: update,
+})
+
+export const updateDefBreakMin = update => ({
+  type: ACTION_TYPE.UPDATE_DEF_BREAK_MIN,
+  payload: update,
+})
+
+export const updateDefBreakSec = update => ({
+  type: ACTION_TYPE.UPDATE_DEF_BREAK_SEC,
   payload: update,
 })
 

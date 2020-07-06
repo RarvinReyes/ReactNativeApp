@@ -18,7 +18,6 @@ const mapStatusReducer = (state = false, action) => {
 }
 
 const countdownReducer = (state = {}, action) => {
-
   switch (action.type) {
     case ACTION_TYPE.UPDATE_WORK_MIN:
       return Merge(state, {workMin: action.payload});
@@ -60,7 +59,20 @@ const regionReducer = (state = {}, action) => {
 
 
 const defaultCountdownReducer = (state = {}, action) => {
-  return state;
+  switch (action.type) {
+    case ACTION_TYPE.UPDATE_DEF_WORK_MIN:
+      return Merge(state, {workMin: action.payload});
+
+    case ACTION_TYPE.UPDATE_DEF_WORK_SEC:
+      return Merge(state, {workSec: action.payload});
+
+    case ACTION_TYPE.UPDATE_DEF_BREAK_MIN:
+      return Merge(state, {breakMin: action.payload});
+
+    case ACTION_TYPE.UPDATE_DEF_BREAK_SEC:
+      return Merge(state, {breakSec: action.payload});
+  }
+  return state
 }
 
 export const Reducer = combineReducers({

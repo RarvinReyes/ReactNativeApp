@@ -10,7 +10,7 @@ const TimerButtons = (props) => {
         (<MyButton title={props.startTitle} onPress={() => props.startTimer(props.navigation)} />)
       }
       <Text>  </Text>
-      <MyButton title={props.resetTitle} onPress={() => props.resetTimer()} />
+      <MyButton title={props.resetTitle} onPress={() => props.resetTimer(props.navigation)} />
     </View>
   )
 }

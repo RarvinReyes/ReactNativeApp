@@ -5,17 +5,19 @@ import PropTypes from 'prop-types';
 import TimerButtons from '_molecules/TimerButtons.js'
 import Timer from '_molecules/Timer.js';
 
-import { updateWorkMin, updateWorkSec } from '_redux/Action.js';
+import { updateWorkMin, updateWorkSec, updateDefWorkMin, updateDefWorkSec } from '_redux/Action.js';
 import { connect } from 'react-redux';
 
 const Work = props => {
 
   const handleWorkMin = value => {
     props.dispatch(updateWorkMin(parseInt(value)));
+    props.dispatch(updateDefWorkMin(parseInt(value)));
   }
   
   const handleWorkSec = value => {
     props.dispatch(updateWorkSec(parseInt(value)));
+    props.dispatch(updateDefWorkSec(parseInt(value)));
   }
   
   return (

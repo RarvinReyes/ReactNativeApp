@@ -5,17 +5,19 @@ import PropTypes from 'prop-types';
 import TimerButtons from '_molecules/TimerButtons.js'
 import Timer from '_molecules/Timer.js';
 
-import { updateBreakMin, updateBreakSec } from '_redux/Action.js';
+import { updateBreakMin, updateBreakSec, updateDefBreakMin, updateDefBreakSec, } from '_redux/Action.js';
 import { connect } from 'react-redux';
 
 const Break = (props) => {
 
   const handleBreakMin = value => {
     props.dispatch(updateBreakMin(parseInt(value)));
+    props.dispatch(updateDefBreakMin(parseInt(value)));
   }
   
   const handleBreakSec = value => {
     props.dispatch(updateBreakSec(parseInt(value)));
+    props.dispatch(updateDefBreakSec(parseInt(value)));
   }
 
   return (

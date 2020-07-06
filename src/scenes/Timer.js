@@ -9,6 +9,8 @@ class Timer extends React.Component {
 
   componentWillUnmount() {
     clearInterval(this.countdownInterval);
+    this.props.dispatch(updateIsStart(false));
+    this.props.dispatch(updateIsBreak(false));
   }
 
   startTimer = (navigation) => {
@@ -21,11 +23,12 @@ class Timer extends React.Component {
     this.props.dispatch(updateIsStart(false));
   }
 
-  resetTimer = () => {
+  resetTimer = (navigation) => {
     clearInterval(this.countdownInterval);
     this.props.dispatch(updateIsStart(false));
     this.props.dispatch(updateIsBreak(false));
     this.props.dispatch(updateCountdown({ ...this.props.defaultCountdown }));
+    navigation.navigate(NavNames.WORK);
   }
 
   timerCountDown = (navigation) => {
